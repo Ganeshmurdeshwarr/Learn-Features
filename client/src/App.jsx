@@ -22,7 +22,7 @@ function App() {
       <Route index element={<Home/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/setting' element={<Setting/>}/>
-      <Route path='/notes' element={<Note/>}/>
+      <Route path='/note/:id' element={<Note/>}/>
       <Route path='/create-note' element={<CreateNote/>}/>
       <Route path='/search' element={<Search/>}/>
       <Route path='/trash' element={<Trash/>}/>

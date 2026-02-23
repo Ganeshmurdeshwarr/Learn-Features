@@ -11,13 +11,13 @@ const UserLayout = () => {
       <Navbar />
 
       {/* Home */}
-      <main className='pt-20 px-2'>
+      <main className='pt-20 '>
       <Outlet/>
       </main>
 
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

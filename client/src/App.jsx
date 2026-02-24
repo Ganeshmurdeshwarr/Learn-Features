@@ -9,6 +9,8 @@ import Note from './components/navSections/Note'
 import Trash from './components/navSections/Trash'
 import CreateNote from './components/navSections/CreateNote'
 import Search from './components/navSections/Search'
+import PinnedNotes from './components/PinnedNotes'
+import EditNote from './components/EditNote'
 
 function App() {
 
@@ -26,6 +28,8 @@ function App() {
       <Route path='/create-note' element={<CreateNote/>}/>
       <Route path='/search' element={<Search/>}/>
       <Route path='/trash' element={<Trash/>}/>
+      <Route path='/edit/:id' element={<EditNote/>}/>
+      <Route path='/pinned' element={<PinnedNotes/>}/>
       </Route>
       
       <Route path='/login' element={<Login/>}/>

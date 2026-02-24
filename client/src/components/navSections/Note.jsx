@@ -1,10 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import ganesh from '../../assets/Ganesh-Devadiga (1).png'
 
 const Note = () => {
 
   const {id} = useParams()
+
+  const navigate = useNavigate()
 
 
  const note = [ {
@@ -23,6 +25,16 @@ const Note = () => {
       <p className="line-clamp-3">{note[0].description}</p>
       <img src={ganesh} alt="" />
       <p>12/2/2025</p>
+
+      <div className="flex justify-around items-center gap-10 w-full mt-4">
+        <button
+          onClick={()=>navigate(`/edit/${id}`)}
+          className="bg-blue-400/20 py-2 px-8 rounded-2xl "
+        >
+          Edit
+        </button>
+        <button className="bg-red-500 py-2 px-8 rounded-2xl ">Delete</button>
+      </div>
     </div>
   );
 }

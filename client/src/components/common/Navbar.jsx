@@ -14,7 +14,7 @@ const dropRef = useRef(null)
 const navRef = useRef(null)
 
   const navbarSections = [
-    { name: "Note" ,path:'/notes'},
+    { name: "Note" ,path:'/'},
     { name: "Create note",path:'/create-note' },
     { name: "Trash",path:'/trash' },
     { name: "search" ,path:'/search'},
@@ -34,14 +34,20 @@ const navRef = useRef(null)
   
 
   return (
-    <nav className="fixed z-50 top-0 w-full flex justify-between items-center bg-transparent px-4 py-2">
+    <nav className="fixed z-50 top-0 w-full flex justify-between items-center bg-white/30 backdrop-blur-md px-4 py-2">
       <Link to="/">Mega App</Link>
 
       {/* Nav sections for Large screens */}
       <div className="hidden md:flex justify-between items-center gap-x-10 ">
         {navbarSections.map((item, index) => (
-          <NavLink to={item.path} key={index}
-          className={({isActive})=>  isActive ? "bg-green-400/90 px-4 py-1 rounded-2xl outline outline-blue-700 outline-offset-4" : 'hover:bg-blue-400/50 px-4 py-1 rounded-2xl hover:outline outline-blue-700 outline-offset-4'}
+          <NavLink
+            to={item.path}
+            key={index}
+            className={({ isActive }) =>
+              isActive
+                ? "bg-green-400/90 px-4 py-1 rounded-2xl outline outline-blue-700 outline-offset-4"
+                : "hover:bg-blue-400/50 px-4 py-1 rounded-2xl hover:outline outline-blue-700 outline-offset-4"
+            }
           >
             {item.name}
           </NavLink>
